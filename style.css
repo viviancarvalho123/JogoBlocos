@@ -1,0 +1,50 @@
+body {
+    background: -webkit-linear-gradient(left, #97c9ec, #0369e0);
+    background: -moz-linear-gradient(left, #97c9ec, #0369e0);
+    background: -ms-linear-gradient(left, #97c9ec, #0369e0);
+    background: -o-linear-gradient(left, #97c9ec, #0369e0);
+    background: linear-gradient(to right, #97c9ec, #0369e0);
+    
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  #game_board {
+    width: 900px;
+    height: 1500px;
+    border: 10px solid #ecf1a9;
+    margin: 0 auto;
+    position: absolute; /* ou fixed */
+    background-color: #000000;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.6);
+    top: 40px; /* posiciona no topo da tela */
+    left: 50%; /* centraliza horizontalmente */
+    transform: translateX(-50%); /* centraliza horizontalmente */
+}
+  
+  .block {
+    width: 24px;
+    height: 24px;
+    border: 2px solid rgb(0, 0, 0);
+    position: absolute;
+    box-shadow: inset 5px 3px 0 rgba(255, 255, 255, 0.3);
+  }
+  
+  .ghost {
+    width: 24px;
+    height: 24px;
+    display: none;
+    border: 1px solid black;
+    box-shadow: inset 6px 8px 0 rgba(255, 13, 13, 0);
+  }
+
+
+
+
+
+

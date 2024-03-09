@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <title>BLOCOS-HIPERAGAMES</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="game_board_wrap">
+      <!-- aqui fica a img -->
+      <div id="game_board"></div>
+     
+      <div >
+        <div>
+          <button class="botoes" onclick="moveTetromino('left')" >
+            <img classe="setas" src="./img/esquerdaSeta.png"> 
+          </button>
+
+          <button class="botoes" onclick="rotateTetromino()"> 
+            <img classe="setas" src="./img/setaRotacao.png"> 
+          </button>
+
+          <button class="botoes" onclick="moveTetromino('right')">
+            <img classe="setas" src="./img/setaDireita.png"> 
+          </button>
+            
+          <button  class="botoes" onclick="moveTetromino('down')">
+            <img classe="setas" src="./img/baixoSeta.png"> 
+          </button>
+        </div>
+       
+        
+        
+        
+       
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+    <style>
+      .botoes{
+        margin-top: 1400px;
+        border-radius: 50px;
+        width: 80px;
+        height: 80px;
+      }
+
+        
+
+    </style>
+  </body>
+</html>
