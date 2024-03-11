@@ -13,16 +13,22 @@ body {
     padding: 0;
   }
   
+  .game_board_wrap {
+    position: absolute;
+    top: 10px ;
+    transform: scale(2.8 , 2.8);
+  }
   
   #game_board {
-    width: 900px;
-    height: 1500px;
+    width: 245px;
+    height: 485px;
+    
     border: 10px solid #ecf1a9;
     margin: 0 auto;
     position: absolute; /* ou fixed */
     background-color: #000000;
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.6);
-    top: 40px; /* posiciona no topo da tela */
+    top: 50px; /* posiciona no topo da tela */
     left: 50%; /* centraliza horizontalmente */
     transform: translateX(-50%); /* centraliza horizontalmente */
 }
@@ -42,6 +48,26 @@ body {
     border: 1px solid black;
     box-shadow: inset 6px 8px 0 rgba(255, 13, 13, 0);
   }
+
+  .botoes{
+    position: absolute; 
+    display: flex;
+    bottom: 50px;
+  }
+  .btn{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+  }
+.displayScore{
+  position: absolute;
+  top: 2px;
+  font-size: 4em;
+  left: 120px;
+  font-weight: 500;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
 
 
 

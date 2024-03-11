@@ -1,6 +1,6 @@
 // Aqui é a configuração do tabuleiro.
-const BOARD_WIDTH = 37;
-const BOARD_HEIGHT = 62;
+const BOARD_WIDTH = 10;
+const BOARD_HEIGHT = 20;
 
 
 const board = [];
@@ -8,6 +8,8 @@ const bgm = document.createElement("audio");
 const breakSound = document.createElement("audio");
 const drop = document.createElement("audio");
 let rotatedShape;
+
+let score = 0;
 
 
 // Inicialização do tabuleiro:
@@ -27,6 +29,8 @@ for (let row = 0; row < BOARD_HEIGHT; row++) {
     board[row][col] = 0;
   }
 }
+
+
 
 // Tetrominoes
 // Definição das peças tetrimino =  é uma matriz de objetos que define as diferentes formas e cores das peças Tetris
@@ -180,16 +184,35 @@ function lockTetromino() {
     }
   }
 
+  
+
   // Check if any rows need to be cleared
   let rowsCleared = clearRows();
   if (rowsCleared > 0) {
-    // updateScore(rowsCleared);
+    updateScore(rowsCleared);
   }
+
+  verifyEndGame()
 
   // Create a new tetromino
   // Current tetromino
   currentTetromino = randomTetromino();
 }
+
+function verifyEndGame(){
+
+}
+
+function updateScore(rowsCleared){
+   score = score + (rowsCleared*10) 
+   document.getElementById("score").textContent="Pontos: " + score 
+
+}
+
+function inicioScore(){
+  document.getElementById("score").textContent="Pontos: 0"
+}
+
 
 function clearRows() {
   let rowsCleared = 0;
@@ -405,3 +428,5 @@ function moveGhostTetromino() {
 
   drawGhostTetromino();
 }
+
+inicioScore()
