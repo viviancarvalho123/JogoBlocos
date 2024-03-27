@@ -2,43 +2,84 @@
 <html>
 
 <head>
-
   <title>BLOCOS-HIPERAGAMES</title>
   <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="stylesheet" href="index.js">
 </head>
 
-
 <body>
-  <div class="displayScore">
-    <p id="score">Score:</p>
+
+  <div id="start-screen"> <!--TELA INICIAL-->
+
+    <div class="logo">  <!--LOGO-->
+      <span class="red">B</span><span class="blue">L</span><span class="pink">O</span><span class="cyan">C</span><span class="yellow">O</span><span class="orange">S</span>
+      <span class="pink">H</span><span class="red">I</span><span class="purple">P</span><span class="cyan">E</span><span class="orange">R</span><span class="yellow">A</span>
+    </div>
+
+    <img src="/img/telaPrin.png" alt="" id="background-image"><!--IMAGEM DO TETRIS-->
+    <button class="botaoVoltar navbar-item" onclick="startGame()">Jogar</button> <!--BOTAO JOGAR-->
   </div>
-  <div class="game_board_wrap">
-    <!-- aqui fica a img -->
-    <div id="game_board"></div>
 
+
+  <!-- GAME SCREEN -->
+  <div id="game-screen" style="display: none;">
+    
+     <div class="displayScore">
+      <p id="score">Pontuação: </p>
+    </div>  <!-- PONTUAÇAO -->
+    
+ 
+    <div class="game_board_wrap"> <!-- JOGO OFICIAL -->
+      <div id="game_board"></div>
+    </div>
+
+    
+    
+    <div class="botoes">  
+      <button class="btn" onclick="window.moveTetromino('left')">
+        <img classe="setas" src="./img/esquerdaSeta.png">
+      </button>
+
+      <button class="btn" onclick="window.rotateTetromino()">
+        <img classe="setas" src="./img/setaRotacao.png">
+      </button>
+
+      <button class="btn" onclick="window.moveTetromino('right')">
+        <img classe="setas" src="./img/setaDireita.png">
+      </button>
+
+      <button class="btn" onclick="window.moveTetromino('down')">
+        <img classe="setas" src="./img/baixoSeta.png">
+      </button>
+
+    </div>
   </div>
 
-
-  <div class="botoes">
-    <button class="btn" onclick="moveTetromino('left')">
-      <img classe="setas" src="./img/esquerdaSeta.png">
-    </button>
-
-    <button class="btn" onclick="rotateTetromino()">
-      <img classe="setas" src="./img/setaRotacao.png">
-    </button>
-
-    <button class="btn" onclick="moveTetromino('right')">
-      <img classe="setas" src="./img/setaDireita.png">
-    </button>
-
-    <button class="btn" onclick="moveTetromino('down')">
-      <img classe="setas" src="./img/baixoSeta.png">
-    </button>
+  <div>
+    <div id="game-over-screen" >
+      <h2>Você perdeu!!!</h2>
+      <p>Sua pontuação foi: <span id="final-score">inicioScore()</span></p>
+      
+      <button id="playAgainBtn">Jogar Novamente</button>
+    </div>
   </div>
+  
+ 
 
   <script src="index.js"></script>
-
 </body>
 
+<style>
+  /* Estilo para a imagem de fundo */
+
+  #background-image {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1; /* Para posicionar atrás dos outros elementos */
+  }
+
+  
+</style>
 </html>

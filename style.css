@@ -1,66 +1,90 @@
-body {
-    background: -webkit-linear-gradient(left, #97c9ec, #0369e0);
-    background: -moz-linear-gradient(left, #97c9ec, #0369e0);
-    background: -ms-linear-gradient(left, #97c9ec, #0369e0);
-    background: -o-linear-gradient(left, #97c9ec, #0369e0);
-    background: linear-gradient(to right, #97c9ec, #0369e0);
-    
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .game_board_wrap {
-    position: absolute;
-    top: 10px ;
-    transform: scale(2.8 , 2.8);
-  }
-  
-  #game_board {
-    width: 245px;
-    height: 485px;
-    
-    border: 10px solid #ecf1a9;
-    margin: 0 auto;
-    position: absolute; /* ou fixed */
-    background-color: #000000;
-    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.6);
-    top: 50px; /* posiciona no topo da tela */
-    left: 50%; /* centraliza horizontalmente */
-    transform: translateX(-50%); /* centraliza horizontalmente */
+@font-face {
+  font-family: 'Dekris';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Deckris'), url('./ConnectionBold-ER1g.otf') format('truetype');
 }
-  
-  .block {
-    width: 24px;
-    height: 24px;
-    border: 2px solid rgb(0, 0, 0);
-    position: absolute;
-    box-shadow: inset 5px 3px 0 rgba(255, 255, 255, 0.3);
-  }
-  
-  .ghost {
-    width: 24px;
-    height: 24px;
-    display: none;
-    border: 1px solid black;
-    box-shadow: inset 6px 8px 0 rgba(255, 13, 13, 0);
-  }
 
-  .botoes{
-    position: absolute; 
-    display: flex;
-    bottom: 50px;
-  }
-  .btn{
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    margin: 10px;
-  }
-.displayScore{
+::-webkit-scrollbar {
+  display: none;
+} 
+
+#score #speed {
+  display: inline-block;
+}  
+
+body {
+  background: -webkit-linear-gradient(left, #97c9ec, #0369e0);
+  background: -moz-linear-gradient(left, #97c9ec, #0369e0);
+  background: -ms-linear-gradient(left, #97c9ec, #0369e0);
+  background: -o-linear-gradient(left, #97c9ec, #0369e0);
+  background: linear-gradient(to right, #97c9ec, #0369e0);
+  
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  position: relative; /* Adicionado para posicionar a imagem corretamente */
+}
+
+
+
+.game_board_wrap {
+  position: absolute;
+  top: 10px ;
+  transform: scale(2.8 , 2.8);
+}
+
+#game_board {
+  width: 245px;
+  height: 485px;
+  border: 10px solid #ecf1a9;
+  margin: 0 auto;
+  position: absolute;
+  background-color: #000000;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.6);
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.block {
+  width: 24px;
+  height: 24px;
+  border: 2px solid rgb(0, 0, 0);
+  position: absolute;
+  box-shadow: inset 5px 3px 0 rgba(255, 255, 255, 0.3);
+}
+
+.ghost {
+  width: 24px;
+  height: 24px;
+  display: none;
+  border: 1px solid black;
+  box-shadow: inset 6px 8px 0 rgba(255, 13, 13, 0);
+}
+
+/* Estilos para os botões */
+.botoes {
+  position: absolute; 
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.btn {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+}
+
+
+.displayScore {
   position: absolute;
   top: 2px;
   font-size: 4em;
@@ -69,8 +93,145 @@ body {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
+/* estilizando o botão da tela principal de blocs */
+.botaoVoltar {
+  width: 600px;
+  height: 100px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border-radius: 70px;
+  border-width: 5px;
+  border-color: white;
+  font-weight: bold;
+}
+
+.botaoDiv {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  
+}
+
+.botaoVoltar {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f9f9f9bb;
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  font-size: 60px;
+  border-radius: 70px;
+  border-width: 5px;
+  border-color: rgb(8, 0, 0);
+  cursor: pointer;
+  font-weight: bold; /* Deixa o texto em negrito */
+  
+}
+
+.botaoVoltar:hover {
+  background-color: #02b6e886;
+}
+
+/* logo */
 
 
 
+.logo {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 200px;
+  text-shadow: 10px 7px 7px #010004;
+  text-align: center; /* Centraliza o texto */
+  margin-top: 200px; /* Ajusta o espaçamento superior */
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold; /* Deixa o texto em negrito */
+ 
+}
+
+.red {
+  color: red;
+}
+
+.pink {
+  color: pink;
+}
+
+.blue {
+  color: blue;
+}
+
+.yellow {
+  color: yellow;
+}
+
+.purple {
+  color: purple;
+}
+
+.cyan {
+  color: cyan;
+}
+
+.orange {
+  color: orange;
+} 
 
 
+#game-over-screen {
+  display: none; /* Inicialmente oculto */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.833); /* Fundo preto semi-transparente */
+  text-align: center;
+  color: #ffffff;
+  border-radius: 70px;
+  border-color: #ffffff;
+  z-index: 1000; /* Certifique-se de que a tela de game over esteja acima de outros elementos */
+  width: 90%;
+  max-width: 800px; /* Largura máxima */
+  height: 80%;
+  max-height: 600px; /* Altura máxima */
+  overflow: auto; /* Adicionar scroll se o conteúdo exceder a altura máxima */
+}
+
+#game-over-screen h2 {
+  margin-bottom: 20px;
+  font-size: 100px;
+  font-weight: bold;
+}
+
+#game-over-screen p {
+  margin-bottom: 20px;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+#final-score {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+/* Estilo para botões na tela de game over */
+#quitBtn,
+#playAgainBtn {
+  background-color: #0369e0;
+  color: #fff;
+  border: none;
+  padding: 25px 100px; /* Ajustar o padding conforme necessário */
+  margin-right: 10px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+#quitBtn:hover,
+#playAgainBtn:hover {
+  background-color: #0047a8;
+}
